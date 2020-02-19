@@ -1,12 +1,60 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
 \title{Apuntes de Programación lineal}
 \author{Reyna Edgar}
 
 \begin{document}
+
 \maketitle
+\tableofcontents
+\section{Introducción}
+\label{sec:inicio}
 
 La forma estándar de un problema de programación lineal es:
-Dada una matriz $A$ y vectores $B$ y $C$ maximizar $C^TX$ sujeto a
-$AX\leq b$.
+Dada una matriz $A$ y vectores $b$ y $C$ maximizar $C^TX$ sujeto a
+$AX\leq b$ y $x\geq0$.
+
+\smallskip
+Si alguna de nuestras variables no está acotada por 0 hacemos un cambio de variable y resolvemos el problema nuevo.
+
+La forma simplex de un problema de programación líneal es:
+Dada una matrix $A$ y vectores $c$ y $b$. Maximizar $c^Tx$ sujeto a
+$Ax=b$ y $x\geq0$.
+
+\section{Ejemplo}
+\label{sec:ejemplo-1}
+
+Un gerente está planeando como distribuir la producción de dos productos entre dos máquinas. Para ser manufacturado cada producto requiere cierto tiempo (en horas) en cada una de las máquinas.
+El tiempo requerido está resumido en la siguiente tabla:
+\begin{center}
+  \begin{tabular}
+  {|c|c|c|}
+  \hline
+  &A&B\\
+  \hline
+  máquina&1&2\\
+  \hline
+  máquina&1 &1\\
+  \hline
+\end{tabular}
+\end{center}
+
+La máquina 1 está disponible 40 horas a la semana y la 2 está disponible 34 horas a la semana.
+
+Si la utilidad obtenida al vender los productos A y B es de 2, 3 pesos por unidad, respectivamente ¿Cuál debe ser la producción semanal que maximiza la utilidad? ¿Cuál es la utilidad máxima?
+
+\begin{equation*}
+  \label{eq:1}
+  \begin{pmatrix}
+    0&1&2\\
+    3&-1&5
+  \end{pmatrix}
+  \begin{pmatrix}
+    9&2\\
+    7&8\\
+    5&3\\
+  \end{pmatrix}
+\end{equation*}
 \end{document}
